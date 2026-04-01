@@ -1,0 +1,12 @@
+{
+  "pageTitle": "Pedidos",
+  "status": {
+    "pending": "Pendiente",
+    "shipped": "Enviado",
+    "delivered": "Entregado"
+  },
+  "actions": {
+    "cancel": "Cancelar pedido",
+    "track": "Rastrear"
+  }
+}

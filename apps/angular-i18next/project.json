@@ -1,0 +1,49 @@
+{
+  "name": "angular-i18next-example",
+  "targets": {
+    "i18n": {
+      "executor": "i18n-keygen:keys",
+      "options": { "configFile": "apps/angular-i18next/i18n.config.json" },
+      "inputs": ["{projectRoot}/i18n.config.json", "{projectRoot}/locales/**/*.json"],
+      "outputs": ["{projectRoot}/src/i18n/i18n-keys.generated.ts"],
+      "cache": true
+    },
+    "i18n-watch": {
+      "executor": "i18n-keygen:keys",
+      "continuous": true,
+      "options": { "configFile": "apps/angular-i18next/i18n.config.json" }
+    },
+    "build": {
+      "executor": "@angular/build:application",
+      "dependsOn": ["i18n"],
+      "options": {
+        "outputPath": "dist/apps/angular-i18next",
+        "index": "apps/angular-i18next/src/index.html",
+        "browser": "apps/angular-i18next/src/main.ts",
+        "tsConfig": "apps/angular-i18next/tsconfig.app.json",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/angular-i18next/locales",
+            "output": "/assets/locales"
+          }
+        ],
+        "styles": ["apps/angular-i18next/src/styles.css"]
+      },
+      "configurations": {
+        "development": {
+          "optimization": false,
+          "extractLicenses": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@angular/build:dev-server",
+      "continuous": true,
+      "dependsOn": ["i18n-watch"],
+      "options": {
+        "buildTarget": "angular-i18next-example:build:development"
+      }
+    }
+  }
+}

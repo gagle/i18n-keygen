@@ -1,0 +1,103 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm nx run i18n-keygen:build
+      - uses: actions/cache/save@v4
+        with:
+          path: packages/i18n-keygen/dist
+          key: dist-${{ matrix.node-version }}-${{ github.sha }}
+
+  lint:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm nx run i18n-keygen:lint
+      - run: pnpm nx run i18n-keygen:typecheck
+
+  test:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - uses: actions/cache/restore@v4
+        with:
+          path: packages/i18n-keygen/dist
+          key: dist-${{ matrix.node-version }}-${{ github.sha }}
+      - run: pnpm nx run i18n-keygen:test -- --coverage
+      - run: pnpm nx run-many -t i18n
+      - uses: actions/upload-artifact@v4
+        if: matrix.node-version == 22
+        with:
+          name: coverage
+          path: packages/i18n-keygen/coverage/
+
+  e2e:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - uses: actions/cache/restore@v4
+        with:
+          path: packages/i18n-keygen/dist
+          key: dist-${{ matrix.node-version }}-${{ github.sha }}
+      - run: pnpm nx run i18n-keygen-e2e:e2e
+
+  coverage:
+    if: github.event_name == 'pull_request'
+    needs: [test]
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: coverage
+          path: packages/i18n-keygen/coverage/
+      - uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          json-summary-path: packages/i18n-keygen/coverage/coverage-summary.json
+          json-final-path: packages/i18n-keygen/coverage/coverage-final.json

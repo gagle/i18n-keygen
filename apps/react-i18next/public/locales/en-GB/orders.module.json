@@ -1,0 +1,12 @@
+{
+  "pageTitle": "Orders",
+  "status": {
+    "pending": "Pending",
+    "shipped": "Shipped",
+    "delivered": "Delivered"
+  },
+  "actions": {
+    "cancel": "Cancel Order",
+    "track": "Track"
+  }
+}
