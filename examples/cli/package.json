@@ -1,0 +1,12 @@
+{
+  "name": "i18n-keygen-example-cli",
+  "private": true,
+  "scripts": {
+    "i18n": "node ../../packages/i18n-keygen/dist/cli.js",
+    "i18n:watch": "node ../../packages/i18n-keygen/dist/cli.js --watch"
+  },
+  "devDependencies": {
+    "i18n-keygen": "workspace:*",
+    "typescript": "^5.9.0"
+  }
+}
