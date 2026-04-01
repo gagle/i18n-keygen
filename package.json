@@ -1,0 +1,49 @@
+{
+  "name": "i18n-keygen-workspace",
+  "version": "0.0.0",
+  "description": "Type-safe i18n keys for every build tool. One package, zero lock-in.",
+  "author": "Gabriel Llamas",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gagle/i18n-keygen.git"
+  },
+  "packageManager": "pnpm@10.15.0",
+  "scripts": {
+    "build": "nx run-many -t build",
+    "test": "nx run-many -t test",
+    "lint": "nx run-many -t lint",
+    "i18n": "nx run-many -t i18n",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
+    "@eslint/js": "^10.0.1",
+    "@nx/devkit": "^22.6.1",
+    "@nx/eslint": "^22.6.3",
+    "@nx/eslint-plugin": "^22.6.3",
+    "@swc-node/register": "^1.11.1",
+    "@swc/core": "^1.15.21",
+    "@types/node": "^20.19.9",
+    "@vitest/coverage-v8": "^4.1.4",
+    "eslint": "^10.1.0",
+    "husky": "^9.1.7",
+    "nx": "^22.6.1",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.58.0",
+    "vitest": "^4.1.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "@swc/core",
+      "core-js",
+      "esbuild",
+      "lmdb",
+      "msgpackr-extract",
+      "nx"
+    ]
+  }
+}

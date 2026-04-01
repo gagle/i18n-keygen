@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "outputCapture": "direct-nodejs",
+  "cli": "nx",
+  "title": "Generate i18n Keys",
+  "description": "Generate typed I18nKey union from i18n JSON files",
+  "type": "object",
+  "properties": {
+    "configFile": {
+      "type": "string",
+      "description": "Path to i18n config file (relative to workspace root)",
+      "default": "i18n.config.json"
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}

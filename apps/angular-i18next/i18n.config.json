@@ -1,0 +1,27 @@
+{
+  "outputFile": "apps/angular-i18next/src/i18n/i18n-keys.generated.ts",
+  "stampConsumer": "i18n.pipe.ts",
+  "scopeSeparator": ":",
+  "supportedLangs": [
+    "en-GB",
+    "en"
+  ],
+  "defaultLang": "en-GB",
+  "scopes": [
+    {
+      "name": "core",
+      "dir": "apps/angular-i18next/locales",
+      "filePattern": "{lang}/core.module.json"
+    },
+    {
+      "name": "products",
+      "dir": "apps/angular-i18next/locales",
+      "filePattern": "{lang}/products.module.json"
+    },
+    {
+      "name": "orders",
+      "dir": "apps/angular-i18next/locales",
+      "filePattern": "{lang}/orders.module.json"
+    }
+  ]
+}

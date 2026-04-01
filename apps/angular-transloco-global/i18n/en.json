@@ -1,0 +1,35 @@
+{
+  "core": {
+    "appTitle": "Test App",
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "orders": "Orders"
+    },
+    "dialog": {
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    }
+  },
+  "products": {
+    "pageTitle": "Products",
+    "table": {
+      "name": "Name",
+      "price": "Price",
+      "actions": "Actions"
+    },
+    "emptyState": "No products yet"
+  },
+  "orders": {
+    "pageTitle": "Orders",
+    "status": {
+      "pending": "Pending",
+      "shipped": "Shipped",
+      "delivered": "Delivered"
+    },
+    "actions": {
+      "cancel": "Cancel Order",
+      "track": "Track"
+    }
+  }
+}
