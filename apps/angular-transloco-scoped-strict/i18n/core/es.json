@@ -1,0 +1,12 @@
+{
+  "appTitle": "App de prueba",
+  "nav": {
+    "home": "Inicio",
+    "products": "Productos",
+    "orders": "Pedidos"
+  },
+  "dialog": {
+    "cancel": "Cancelar",
+    "confirm": "Confirmar"
+  }
+}

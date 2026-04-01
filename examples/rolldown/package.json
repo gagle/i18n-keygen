@@ -1,0 +1,13 @@
+{
+  "name": "i18n-keygen-example-rolldown",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "rolldown -c"
+  },
+  "devDependencies": {
+    "rolldown": "^1.0.0-rc.15",
+    "i18n-keygen": "*",
+    "typescript": "^5.9.0"
+  }
+}

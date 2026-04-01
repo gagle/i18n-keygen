@@ -1,0 +1,13 @@
+{
+  "name": "i18n-keygen-example-esbuild",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "i18n-keygen": "*",
+    "typescript": "^5.9.0"
+  }
+}
