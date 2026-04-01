@@ -1,0 +1,12 @@
+{
+  "appTitle": "Test App",
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "orders": "Orders"
+  },
+  "dialog": {
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  }
+}
