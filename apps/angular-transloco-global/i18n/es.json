@@ -1,0 +1,35 @@
+{
+  "core": {
+    "appTitle": "App de prueba",
+    "nav": {
+      "home": "Inicio",
+      "products": "Productos",
+      "orders": "Pedidos"
+    },
+    "dialog": {
+      "confirm": "Confirmar",
+      "cancel": "Cancelar"
+    }
+  },
+  "products": {
+    "pageTitle": "Productos",
+    "table": {
+      "name": "Nombre",
+      "price": "Precio",
+      "actions": "Acciones"
+    },
+    "emptyState": "Aun no hay productos"
+  },
+  "orders": {
+    "pageTitle": "Pedidos",
+    "status": {
+      "pending": "Pendiente",
+      "shipped": "Enviado",
+      "delivered": "Entregado"
+    },
+    "actions": {
+      "cancel": "Cancelar pedido",
+      "track": "Rastrear"
+    }
+  }
+}

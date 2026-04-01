@@ -1,0 +1,18 @@
+{
+  "name": "i18n-keygen-e2e",
+  "targets": {
+    "e2e": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["i18n-keygen:build"],
+      "options": {
+        "command": "vitest run --config e2e/vitest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["{projectRoot}/**/*.ts"]
+      }
+    }
+  }
+}

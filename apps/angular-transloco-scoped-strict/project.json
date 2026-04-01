@@ -1,0 +1,42 @@
+{
+  "name": "angular-transloco-scoped-strict-example",
+  "targets": {
+    "i18n": {
+      "executor": "i18n-keygen:keys",
+      "options": { "configFile": "apps/angular-transloco-scoped-strict/i18n.config.json" },
+      "inputs": ["{projectRoot}/i18n.config.json", "{projectRoot}/i18n/**/*.json"],
+      "outputs": ["{projectRoot}/src/i18n/i18n-keys.generated.ts"],
+      "cache": true
+    },
+    "i18n-watch": {
+      "executor": "i18n-keygen:keys",
+      "continuous": true,
+      "options": { "configFile": "apps/angular-transloco-scoped-strict/i18n.config.json" }
+    },
+    "build": {
+      "executor": "@angular/build:application",
+      "dependsOn": ["i18n"],
+      "options": {
+        "outputPath": "dist/apps/angular-transloco-scoped-strict",
+        "index": "apps/angular-transloco-scoped-strict/src/index.html",
+        "browser": "apps/angular-transloco-scoped-strict/src/main.ts",
+        "tsConfig": "apps/angular-transloco-scoped-strict/tsconfig.app.json",
+        "styles": ["apps/angular-transloco-scoped-strict/src/styles.css"]
+      },
+      "configurations": {
+        "development": {
+          "optimization": false,
+          "extractLicenses": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@angular/build:dev-server",
+      "continuous": true,
+      "dependsOn": ["i18n-watch"],
+      "options": {
+        "buildTarget": "angular-transloco-scoped-strict-example:build:development"
+      }
+    }
+  }
+}
