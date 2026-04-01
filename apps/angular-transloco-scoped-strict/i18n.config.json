@@ -1,0 +1,24 @@
+{
+  "outputFile": "apps/angular-transloco-scoped-strict/src/i18n/i18n-keys.generated.ts",
+  "stampConsumer": "i18n.pipe.ts",
+  "supportedLangs": [
+    "en",
+    "es"
+  ],
+  "defaultLang": "en",
+  "strictSync": true,
+  "scopes": [
+    {
+      "name": "core",
+      "dir": "apps/angular-transloco-scoped-strict/i18n/core"
+    },
+    {
+      "name": "products",
+      "dir": "apps/angular-transloco-scoped-strict/i18n/products"
+    },
+    {
+      "name": "orders",
+      "dir": "apps/angular-transloco-scoped-strict/i18n/orders"
+    }
+  ]
+}

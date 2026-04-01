@@ -1,0 +1,14 @@
+{
+  "name": "i18n-keygen-example-rspack",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "rspack build"
+  },
+  "devDependencies": {
+    "@rspack/core": "^1.0.0",
+    "@rspack/cli": "^1.0.0",
+    "i18n-keygen": "workspace:*",
+    "typescript": "^5.9.0"
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "greeting": "Hola",
+  "nav": { "home": "Inicio", "about": "Acerca" }
+}

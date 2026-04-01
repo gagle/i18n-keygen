@@ -1,0 +1,9 @@
+{
+  "pageTitle": "Productos",
+  "table": {
+    "name": "Nombre",
+    "price": "Precio",
+    "actions": "Acciones"
+  },
+  "emptyState": "Aún no hay productos"
+}

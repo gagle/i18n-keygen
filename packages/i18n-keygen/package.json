@@ -1,0 +1,107 @@
+{
+  "name": "i18n-keygen",
+  "version": "0.0.0",
+  "description": "Type-safe i18n keys for every build tool. Reads your translation JSON files, generates a TypeScript union type.",
+  "author": "Gabriel Llamas",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gagle/i18n-keygen.git"
+  },
+  "homepage": "https://github.com/gagle/i18n-keygen#readme",
+  "bugs": {
+    "url": "https://github.com/gagle/i18n-keygen/issues"
+  },
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "typescript",
+    "type-safe",
+    "translation",
+    "translation-keys",
+    "keygen",
+    "codegen",
+    "unplugin",
+    "vite-plugin",
+    "webpack-plugin",
+    "rollup-plugin",
+    "esbuild-plugin",
+    "rspack-plugin",
+    "nx",
+    "lokalise",
+    "crowdin",
+    "phrase",
+    "transloco",
+    "i18next",
+    "react-i18next",
+    "ngx-translate"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./vite": {
+      "types": "./dist/vite.d.ts",
+      "default": "./dist/vite.js"
+    },
+    "./webpack": {
+      "types": "./dist/webpack.d.ts",
+      "default": "./dist/webpack.js"
+    },
+    "./rollup": {
+      "types": "./dist/rollup.d.ts",
+      "default": "./dist/rollup.js"
+    },
+    "./esbuild": {
+      "types": "./dist/esbuild.d.ts",
+      "default": "./dist/esbuild.js"
+    },
+    "./rspack": {
+      "types": "./dist/rspack.d.ts",
+      "default": "./dist/rspack.js"
+    },
+    "./rolldown": {
+      "types": "./dist/rolldown.d.ts",
+      "default": "./dist/rolldown.js"
+    },
+    "./farm": {
+      "types": "./dist/farm.d.ts",
+      "default": "./dist/farm.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "i18n-keygen": "./dist/cli.js"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "prepublishOnly": "echo 'Use CI to publish' && exit 1",
+  "sideEffects": false,
+  "executors": "./executors.json",
+  "dependencies": {
+    "@parcel/watcher": "^2.5.6",
+    "cleye": "^2.3.0",
+    "picocolors": "^1.1.1",
+    "unplugin": "^3.0.0"
+  },
+  "peerDependencies": {
+    "@nx/devkit": ">=19.0.0",
+    "nx": ">=19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@nx/devkit": {
+      "optional": true
+    },
+    "nx": {
+      "optional": true
+    }
+  }
+}

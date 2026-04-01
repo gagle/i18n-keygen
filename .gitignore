@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.nx/
+.angular/
+coverage/
+*.tsbuildinfo
+package-lock.json
+.tmp-test/
+.DS_Store
