@@ -1,0 +1,14 @@
+{
+  "outputFile": "apps/angular-transloco-global/src/i18n/i18n-keys.generated.ts",
+  "stampConsumer": "i18n.pipe.ts",
+  "supportedLangs": [
+    "en",
+    "es"
+  ],
+  "defaultLang": "en",
+  "scopes": [
+    {
+      "dir": "apps/angular-transloco-global/i18n"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "outputFile": "src/i18n-keys.generated.ts",
+  "supportedLangs": ["en", "es"],
+  "scopes": [{ "dir": "i18n" }]
+}

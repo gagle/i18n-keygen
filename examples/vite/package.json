@@ -1,0 +1,14 @@
+{
+  "name": "i18n-keygen-example-vite",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0",
+    "i18n-keygen": "workspace:*",
+    "typescript": "^5.9.0"
+  }
+}

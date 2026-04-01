@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "executors": {
+    "keys": {
+      "implementation": "./dist/nx/executor",
+      "schema": "./src/nx/schema.json",
+      "description": "Generate typed I18nKey union from i18n JSON files"
+    }
+  }
+}
