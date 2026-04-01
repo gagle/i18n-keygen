@@ -1,0 +1,49 @@
+{
+  "name": "angular-transloco-global-example",
+  "targets": {
+    "i18n": {
+      "executor": "i18n-keygen:keys",
+      "options": { "configFile": "apps/angular-transloco-global/i18n.config.json" },
+      "inputs": ["{projectRoot}/i18n.config.json", "{projectRoot}/i18n/**/*.json"],
+      "outputs": ["{projectRoot}/src/i18n/i18n-keys.generated.ts"],
+      "cache": true
+    },
+    "i18n-watch": {
+      "executor": "i18n-keygen:keys",
+      "continuous": true,
+      "options": { "configFile": "apps/angular-transloco-global/i18n.config.json" }
+    },
+    "build": {
+      "executor": "@angular/build:application",
+      "dependsOn": ["i18n"],
+      "options": {
+        "outputPath": "dist/apps/angular-transloco-global",
+        "index": "apps/angular-transloco-global/src/index.html",
+        "browser": "apps/angular-transloco-global/src/main.ts",
+        "tsConfig": "apps/angular-transloco-global/tsconfig.app.json",
+        "assets": [
+          {
+            "glob": "**/*.json",
+            "input": "apps/angular-transloco-global/i18n",
+            "output": "/assets/i18n"
+          }
+        ],
+        "styles": ["apps/angular-transloco-global/src/styles.css"]
+      },
+      "configurations": {
+        "development": {
+          "optimization": false,
+          "extractLicenses": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@angular/build:dev-server",
+      "continuous": true,
+      "dependsOn": ["i18n-watch"],
+      "options": {
+        "buildTarget": "angular-transloco-global-example:build:development"
+      }
+    }
+  }
+}
