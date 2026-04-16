@@ -25,7 +25,7 @@ jobs:
       - run: pnpm exec nx run i18n-keygen:build
 
       - name: Prepare dist for publishing
-        uses: gagle/prepare-dist-action@v1
+        uses: gagle/prepare-dist-action@main
         with:
           path: packages/i18n-keygen
           tag: ${{ github.ref_name }}

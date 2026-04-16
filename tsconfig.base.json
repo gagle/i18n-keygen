@@ -3,6 +3,8 @@
   "compilerOptions": {
     "rootDir": ".",
     "sourceMap": true,
+    "declarationMap": true,
+    "inlineSources": true,
     "declaration": false,
     "target": "ES2022",
     "module": "ES2022",
